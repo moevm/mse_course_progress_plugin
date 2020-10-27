@@ -1,0 +1,78 @@
+.block_completion_progress .content {
+    text-align: left;
+}
+
+.block_completion_progress .barContainer {
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+}
+
+.block_completion_progress .barRow {
+    padding: 0;
+    width: 100%;
+    margin: 0;
+    height: 25px;
+    display: table;
+}
+
+.block_completion_progress .sertificateRow {
+    padding: 0;
+    width: 100%;
+    margin: 0;
+    height: 25px;
+    display: table;
+}
+
+.block_completion_progress .progressBarCell {
+    height: 25px;
+    margin: 0 -1px 0 0;
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+    border-left: solid 4px #878a85;
+    border-top: solid 2px #878a85;
+    border-bottom: solid 2px #878a85;
+    position: relative;
+}
+
+.block_completion_progress .progressSertificateCell {
+    height: 25px;
+    margin: 0 -1px 0 0;
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+    border-top: solid 2px #878a85;
+    border-bottom: solid 2px #878a85;
+    position: relative;
+}
+
+.block_completion_progress .progressBarCell.firstProgressBarCell {
+    border-radius: 4px 0 0 4px;
+    border-left: solid 4px #878a85;
+}
+
+.block_completion_progress .progressBarCell.lastProgressBarCell {
+    border-radius: 0 4px 4px 0;
+    border-right: solid 4px #878a85;
+}
+
+.block_completion_progress .progressSertificateCell.firstSertificateBarCell {
+    border-radius: 4px 0 0 4px;
+    border-left: solid 4px #878a85;
+}
+
+.block_completion_progress .progressSertificateCell.lastSertificateBarCell {
+    border-radius: 0 4px 4px 0;
+    border-right: solid 4px #878a85;
+}
+
+.block_completion_progress .progressPercentage {
+    font-size: 14pt;
+    text-align: left;
+    white-space: pre;
+    overflow: hidden;
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
