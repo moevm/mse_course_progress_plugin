@@ -128,10 +128,10 @@ function block_progress_bar_bar($activities, $completions, $config, $userid, $co
             'class' => 'progressBarCell',
              'style' => 'display:' . $celldisplay .'; width:' . $cellwidth2 . $cellunit . ';background-color:');
 
-	if ($countTaskInSection[$i] == $countCompleteTaskInSection[$i]){
+        if ($countTaskInSection[$i] == $countCompleteTaskInSection[$i]){
 		$celloptions['style'] .= $colours['completed_colour'].';';
 	}
-	else{
+        else{
                $celloptions['style'] .= $colours['futureNotCompleted_colour'].';';
 	}
 
