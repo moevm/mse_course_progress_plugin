@@ -11,9 +11,8 @@
     margin: 0;
     width: 100%;
     height: 25px;
-    margin-top: 10px;
     display: table;
-
+    margin-bottom: 5px;
 }
 
 .block_progress_bar .sertificateRow {
@@ -21,8 +20,8 @@
     width: 100%;
     margin: 0;
     height: 25px;
-    margin-top: 10px;
     display: table;
+    margin-bottom: 5px;
 }
 
 .block_progress_bar .progressBarCell {
@@ -31,10 +30,10 @@
     padding: 0;
     text-align: center;
     vertical-align: middle;
-    border-left: solid 2px #878a85;
-    border-right: solid 2px #878a85;
-    border-top: solid 2px #878a85;
-    border-bottom: solid 2px #878a85;
+    border-left: solid 2px #5b5a5a;
+    border-right: solid 2px #5b5a5a;
+    border-top: solid 2px #5b5a5a;
+    border-bottom: solid 2px #5b5a5a;
     position: relative;
 }
 
@@ -45,8 +44,8 @@
     padding: 0;
     text-align: center;
     vertical-align: middle;
-    border-top: solid 2px #878a85;
-    border-bottom: solid 2px #878a85;
+    border-top: solid 2px #5b5a5a;
+    border-bottom: solid 2px #5b5a5a;
     position: relative;
 }
 
@@ -56,52 +55,50 @@
     padding: 0;
     text-align: center;
     vertical-align: middle;
-    border-top: solid 2px #878a85;
-    border-bottom: solid 2px #878a85;
+    border-top: solid 2px #5b5a5a;
+    border-bottom: solid 2px #5b5a5a;
     position: relative;
 }
 
 .block_progress_bar .progressBarCell.firstProgressBarCell {
-    border-left: solid 4px #878a85;
+    border-left: solid 4px #5b5a5a;
 }
 
 .block_progress_bar .progressBarCell.lastProgressBarCell {
-    border-right: solid 4px #878a85;
+    border-right: solid 4px #5b5a5a;
 }
 
 .block_progress_bar .progressBarSectionCell.firstProgressBarCell {
-    border-left: solid 4px #878a85;
+    border-left: solid 4px #5b5a5a;
 }
 
 .block_progress_bar .progressBarSectionCell.lastProgressBarCell {
-    border-right: solid 4px #878a85;
+    border-right: solid 4px #5b5a5a;
 }
 
 .block_progress_bar .progressSertificateCell.firstSertificateBarCell {
     border-radius: 4px 0 0 4px;
-    border-left: solid 4px #878a85;
+    border-left: solid 4px #5b5a5a;
 }
 
 .block_progress_bar .progressSertificateCell.lastSertificateBarCell {
     border-radius: 0 4px 4px 0;
-    border-right: solid 4px #878a85;
+    border-right: solid 4px #5b5a5a;
 }
 
 .block_progress_bar .progressPercentage {
-    font-size: 14pt;
     text-align: left;
     white-space: pre;
     overflow: hidden;
     padding: 0;
     margin-top: 10px;
-    margin-bottom: 10px;
 }
 
 .block_progress_bar .barTitle {
-    font-size: 14pt;
     text-align: left;
     white-space: pre;
     overflow: hidden;
     padding: 0;
     margin-top: 10px;
 }
+
