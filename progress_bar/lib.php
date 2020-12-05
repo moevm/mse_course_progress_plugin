@@ -59,6 +59,7 @@ function block_progress_bar_bar($activities, $completions, $config, $userid, $co
 
     $colours['completed_colour'] = '#47FF00';
     $colours['futureNotCompleted_colour'] = '#D6DFD3';
+    $colours['failed_colour'] = '#FE6A2E';
 
     $longbars = 'squeeze';
     $content .= HTML_WRITER::start_div('barContainer');
@@ -74,6 +75,7 @@ function block_progress_bar_bar($activities, $completions, $config, $userid, $co
     $sectionArr = array();
     $countTaskInSection = array();
     $countCompleteTaskInSection = array();
+    $countFailedTaskInSection = array();
     if ($numactivities < 20)
 	$cellwidth = $numactivities > 0 ? (100 / $numactivities) : 1;
     else
@@ -92,6 +94,7 @@ function block_progress_bar_bar($activities, $completions, $config, $userid, $co
                 array_push($sectionArr, $activity['section']);
                 $countTaskInSection[$activity['section']] = 1;
                 $countCompleteTaskInSection[$activity['section']] = 0;
+                $countFailedTaskInSection[$activity['section']] = 0;
             }
             else{
 		$countTaskInSection[$activity['section']]++;
@@ -101,13 +104,18 @@ function block_progress_bar_bar($activities, $completions, $config, $userid, $co
                 'class' => 'progressBarCell',
                 'style' => 'display:' . $celldisplay .'; width:' . $cellwidth . $cellunit . ';background-color:');
 
-            if ($complete == COMPLETION_COMPLETE || $complete == COMPLETION_COMPLETE_PASS || $complete == COMPLETION_COMPLETE_FAIL) {
+            if ($complete == COMPLETION_COMPLETE || $complete == COMPLETION_COMPLETE_PASS) {
                 $celloptions['style'] .= $colours['completed_colour'].';';
                 $countComplete++;
                 $countCompleteTaskInSection[$activity['section']]++;
+            }
+//ooooooo
+            else if ($complete == COMPLETION_COMPLETE_FAIL){
+                $celloptions['style'] .= $colours['failed_colour'].';';
+                $countFailedTaskInSection[$activity['section']]++;
+	    }
 
-
-            } else {
+            else {
                 $celloptions['style'] .= $colours['futureNotCompleted_colour'].';';
             }
 
@@ -161,7 +169,7 @@ function block_progress_bar_bar($activities, $completions, $config, $userid, $co
 
                     if ($countGreen == $countCompleteTaskInSection[$k])
                         $celloptions['class'] .= ' firstProgressBarCell';
-                    if (($countGreen == 1 && ($k % 5 == 0)) || $k == count($countTaskInSection))
+                    if (($countGreen == 1 && ($k % 5 == 0)) || ($k == count($countTaskInSection) && $countGreen == 1))
                         $celloptions['class'] .= ' lastProgressBarCell';
 
                     $content .= HTML_WRITER::div(null, null, $celloptions);
@@ -169,8 +177,9 @@ function block_progress_bar_bar($activities, $completions, $config, $userid, $co
 
 	    }
             else{
-                $countWhite = $countTaskInSection[$k] - $countCompleteTaskInSection[$k];
+                $countWhite = $countTaskInSection[$k] - $countCompleteTaskInSection[$k] - $countFailedTaskInSection[$k];
                 $countYellow = $countCompleteTaskInSection[$k];
+                $countRed = $countFailedTaskInSection[$k];
                 $cellWidthInSection = $cellwidth2 / $countTaskInSection[$k];
 
                 for ($countYellow; $countYellow > 0; $countYellow--){
@@ -182,6 +191,18 @@ function block_progress_bar_bar($activities, $completions, $config, $userid, $co
                     $content .= HTML_WRITER::div(null, null, $celloptions2);
                 }
 
+		for ($countRed; $countRed > 0; $countRed--){
+                    $celloptions4 = array(
+                        'class' => 'progressBarSectionCell',
+                        'style' => 'display:' . $celldisplay .'; width:' . $cellWidthInSection . $cellunit . ';background-color:#FE6A2E');
+                    if ($countRed == $countFailedTaskInSection[$k] && $countCompleteTaskInSection[$k] == 0)
+                        $celloptions4['class'] .= ' firstProgressBarCell';
+                    if (($countRed == 1 && ($k % 5 == 0) && $countWhite == 0) || ($k == count($countTaskInSection) && $countRed==1 && $countWhite == 0))
+                        $celloptions4['class'] .= ' lastProgressBarCell';
+                    $content .= HTML_WRITER::div(null, null, $celloptions4);
+                }
+//oooooooooooooooooooooooooooooooo
+
                 for ($countWhite; $countWhite > 0; $countWhite--){
                     $celloptions3 = array(
                         'class' => 'progressBarSectionCell',
@@ -189,7 +210,7 @@ function block_progress_bar_bar($activities, $completions, $config, $userid, $co
                     $celloptions3['style'] .= $colours['futureNotCompleted_colour'].';';
                     if ($countWhite == $countTaskInSection[$k])
                         $celloptions3['class'] .= ' firstProgressBarCell';
-                    if (($countWhite == 1 && ($k % 5 == 0)) || $k == count($countTaskInSection))
+                    if (($countWhite == 1 && ($k % 5 == 0)) || ($k == count($countTaskInSection) && $countWhite==1))
                         $celloptions3['class'] .= ' lastProgressBarCell';
                     $content .= HTML_WRITER::div(null, null, $celloptions3);
                 }
