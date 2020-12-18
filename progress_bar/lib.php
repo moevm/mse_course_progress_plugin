@@ -61,7 +61,7 @@ function block_progress_bar_bar($activities, $completions, $config, $userid, $co
 
     $colours['completed_colour'] = '#47FF00';
     $colours['futureNotCompleted_colour'] = '#D6DFD3';
-    $colours['failed_colour'] = '#FE6A2E';
+    $colours['failed_colour'] = '#FC898A';
 
     $longbars = 'squeeze';
     $content .= HTML_WRITER::start_div('barContainer');
@@ -202,7 +202,7 @@ function block_progress_bar_bar($activities, $completions, $config, $userid, $co
 		for ($countRed; $countRed > 0; $countRed--){
                     $celloptions4 = array(
                         'class' => 'progressBarSectionCell',
-                        'style' => 'display:' . $celldisplay .'; width:' . $cellWidthInSection . $cellunit . ';background-color:#FE6A2E');
+                        'style' => 'display:' . $celldisplay .'; width:' . $cellWidthInSection . $cellunit . ';background-color:#FC898A');
                     if ($countRed == $countFailedTaskInSection[$sectionArr[$k-1]] && $countCompleteTaskInSection[$sectionArr[$k-1]] == 0)
                         $celloptions4['class'] .= ' firstProgressBarCell';
                     if (($countRed == 1 && ($k % $countSectionInRow == 0) && $countWhite == 0) || ($k == count($countTaskInSection) && $countRed==1 && $countWhite == 0))

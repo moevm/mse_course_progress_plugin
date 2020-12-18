@@ -30,10 +30,10 @@
     padding: 0;
     text-align: center;
     vertical-align: middle;
-    border-left: solid 2px #5b5a5a;
-    border-right: solid 2px #5b5a5a;
-    border-top: solid 2px #5b5a5a;
-    border-bottom: solid 2px #5b5a5a;
+    border-left: solid 2px #3d3d3d;
+    border-right: solid 2px #3d3d3d;
+    border-top: solid 2px #3d3d3d;
+    border-bottom: solid 2px #3d3d3d;
     position: relative;
 }
 
@@ -44,8 +44,8 @@
     padding: 0;
     text-align: center;
     vertical-align: middle;
-    border-top: solid 2px #5b5a5a;
-    border-bottom: solid 2px #5b5a5a;
+    border-top: solid 2px #3d3d3d;
+    border-bottom: solid 2px #3d3d3d;
     position: relative;
 }
 
@@ -55,35 +55,35 @@
     padding: 0;
     text-align: center;
     vertical-align: middle;
-    border-top: solid 2px #5b5a5a;
-    border-bottom: solid 2px #5b5a5a;
+    border-top: solid 2px #3d3d3d;
+    border-bottom: solid 2px #3d3d3d;
     position: relative;
 }
 
 .block_progress_bar .progressBarCell.firstProgressBarCell {
-    border-left: solid 4px #5b5a5a;
+    border-left: solid 4px #3d3d3d;
 }
 
 .block_progress_bar .progressBarCell.lastProgressBarCell {
-    border-right: solid 4px #5b5a5a;
+    border-right: solid 4px #3d3d3d;
 }
 
 .block_progress_bar .progressBarSectionCell.firstProgressBarCell {
-    border-left: solid 4px #5b5a5a;
+    border-left: solid 4px #3d3d3d;
 }
 
 .block_progress_bar .progressBarSectionCell.lastProgressBarCell {
-    border-right: solid 4px #5b5a5a;
+    border-right: solid 4px #3d3d3d;
 }
 
 .block_progress_bar .progressSertificateCell.firstSertificateBarCell {
     border-radius: 4px 0 0 4px;
-    border-left: solid 4px #5b5a5a;
+    border-left: solid 4px #3d3d3d;
 }
 
 .block_progress_bar .progressSertificateCell.lastSertificateBarCell {
     border-radius: 0 4px 4px 0;
-    border-right: solid 4px #5b5a5a;
+    border-right: solid 4px #3d3d3d;
 }
 
 .block_progress_bar .progressPercentage {
