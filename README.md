@@ -15,6 +15,11 @@ https://trello.com/b/lk8wESLA/moodle
 ![alt text](screenshots/2.png)
 
 ---
+*   Выбрать необходимые настройки
+
+![alt text](screenshots/4.png)
+
+---
 *   После выполненных действий на вашем курсе появится блок, отображающий прогресс по вашему курсу
 
 ![alt text](screenshots/3.png)
