@@ -9,7 +9,10 @@ const DEFAULT_PROGRESSBAR_COUNTSECTIONINROW = 5;
 
 function block_progress_bar_get_activities($courseid, $config = null) {
     $modinfo = get_fast_modinfo($courseid, -1);
+    debugging(serialize($modinfo));
+    debugging($courseid);
     $sections = $modinfo->get_sections();
+    debugging(serialize($sections));
     $activities = array();
     foreach ($modinfo->instances as $module => $instances) {
         foreach ($instances as $index => $cm) {
@@ -25,7 +28,7 @@ function block_progress_bar_get_activities($courseid, $config = null) {
     }
 
     usort($activities, 'block_progress_bar_compare_events');
-
+    debugging(serialize($activities));
     return $activities;
 }
 

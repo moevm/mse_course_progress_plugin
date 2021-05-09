@@ -7,6 +7,7 @@ require_once($CFG->dirroot.'/blocks/progress_bar/lib.php');
 class block_progress_bar extends block_base {
 
     public function init() {
+        debugging('PROGESS PLUGIN: we init plugin');
         $this->title = get_string('pluginname', 'block_progress_bar');
     }
 
